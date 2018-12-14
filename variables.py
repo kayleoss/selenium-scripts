@@ -13,6 +13,7 @@ region = "city-of-toronto"
 category = "b-buy-sell"
 send_message = "true"
 budget = 60
+num_of_results = 10
 
 # email script
 email_addr = "katie_acting@live.ca"

@@ -1,7 +1,7 @@
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.chrome.options import Options
-from variables import search_item, run_headless, region, category, send_message, budget, path_to_chromedriver
+from variables import search_item, run_headless, region, category, send_message, budget, path_to_chromedriver, num_of_results
 from itertools import izip
 import time
 
@@ -27,7 +27,7 @@ def search():
 
 def collect_results():
 	results = driver.find_elements_by_css_selector(".search-item:not(.top-feature) a.title.enable-search-navigation-flag")
-	for index, result in izip(xrange(10), results):
+	for index, result in izip(xrange(num_of_results), results):
 		print str(index + 1) + ") " + result.text
 		links.append(result.get_attribute("href"))
 
