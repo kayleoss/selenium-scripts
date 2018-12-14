@@ -1,7 +1,7 @@
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.chrome.options import Options
-from variables import search_term, run_headless
+from variables import search_term, run_headless, path_to_chromedriver
 from itertools import izip
 
 options = ""
@@ -12,7 +12,7 @@ if run_headless == "true":
 else:
 	pass
 
-driver = webdriver.Chrome(executable_path="C:/Python27/chromedriver", chrome_options = options)
+driver = webdriver.Chrome(executable_path=path_to_chromedriver, chrome_options = options)
 
 def load_and_set_prefs(search):
 	driver.maximize_window()

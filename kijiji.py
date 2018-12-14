@@ -1,7 +1,7 @@
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.chrome.options import Options
-from variables import search_item, run_headless, region, category, send_message, budget
+from variables import search_item, run_headless, region, category, send_message, budget, path_to_chromedriver
 from itertools import izip
 import time
 
@@ -14,7 +14,7 @@ if run_headless == "true":
 else:
 	pass
 
-driver = webdriver.Chrome(executable_path="C:/Python27/chromedriver", chrome_options = options)
+driver = webdriver.Chrome(executable_path=path_to_chromedriver, chrome_options = options)
 
 def go_to_kijiji():
 	driver.maximize_window()
